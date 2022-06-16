@@ -365,11 +365,11 @@ class BedLoader:
                                                      'name_category']:
                 raise ValueError(
                     'No Score available. Score field must '
-                    'present in {}'.format(sample_file) + \
+                    'present in {} '.format(sample_file) + \
                     'for mode="{}"'.format(mode))
 
             # init whole genome array
-            arrays = {j: np.zeros((row['end'], 2), dtype=dtype) for j, row in gs.iterrows()}
+            arrays = {j: np.zeros((row['end'], 2), dtype=int) for j, row in gs.iterrows()}
 
             # load data from signal coverage
             for region in regions_:
